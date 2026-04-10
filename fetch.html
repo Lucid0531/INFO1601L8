@@ -1,5 +1,5 @@
  <div class="row">
-    <form id="myForm" class="col s12" >
+    <form id="myForm" class="col s12" method="POST">
       <div class="row">
         <div class="input-field col s12">
           <input name="username" type="text" minlength="8" required>
@@ -37,7 +37,7 @@
       const formData = new FormData(myForm);
       const data = Object.fromEntries(formData);
 
-      console.log(data);
+      postData('https://nmendezapps.firebaseio.com/users.json', data);
     }
 
     document.forms['myForm'].addEventListener('submit', submit);
