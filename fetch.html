@@ -27,3 +27,18 @@
      
     </form>
   </div>
+
+  <script>
+
+    function submit(event) {
+      event.preventDefault();
+
+      const myForm = event.target;
+      const formData = new FormData(myForm);
+      const data = Object.fromEntries(formData);
+
+      console.log(data);
+    }
+
+    document.forms['myForm'].addEventListener('submit', submit);
+  </script>
